@@ -1,0 +1,12 @@
+version: "3"
+services:
+  nginx:
+    image: nginx:latest
+  alpine:
+    image: alpine:latest
+    working_dir:
+      /user/madhu/
+    entrypoint: "wget http://nginx"
+    volumes:
+      - C:\Users\madhu\workspace\DockerYAML\VolumeMapping\Volumes:/user/madhu/
+    depends_on:  ["nginx"]

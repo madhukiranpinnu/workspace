@@ -1,0 +1,6 @@
+version: "3"
+services:
+  square:
+    image: 7013918149/mkp
+    environment:
+    - NUMBER=5

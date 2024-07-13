@@ -1,0 +1,7 @@
+version: "3"
+services:
+  sqrt:
+    image: 7013918149/mkp
+    environment:
+     # - NUMBER= ${NUM}
+      - NUMBER

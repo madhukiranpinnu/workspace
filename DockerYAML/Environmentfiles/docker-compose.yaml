@@ -1,0 +1,6 @@
+version: "v3"
+services:
+  madhu:
+    image: vinsdocker/sel-app:${VERSION}
+    ports:
+      - 80:80

@@ -1,0 +1,4 @@
+version : "3"
+services:
+  nginix:
+    image: nginx:latest

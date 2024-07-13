@@ -1,0 +1,9 @@
+version: "3"
+services:
+  nginixserver:
+    image: nginx:latest
+  alpineserver:
+    image: alpine:latest
+    entrypoint:
+      "ping nginixserver"
+    depends_on: ["nginixserver"]
