@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="vendordata">
+    <test name="john">
+        <parameter name="pathData" value="\src\test\resources\test-data\Data\VendorData\john.json"></parameter>
+        <classes>
+            <class name="VendorsPortal.VendorsPortalTest"></class>
+        </classes>
+    </test>
+    <test name="mike">
+        <parameter name="pathData" value="\src\test\resources\test-data\Data\VendorData\mike.json"></parameter>
+        <classes>
+            <class name="VendorsPortal.VendorsPortalTest"></class>
+        </classes>
+    </test>
+    <test name="sam">
+        <parameter name="pathData" value="\src\test\resources\test-data\Data\VendorData\sam.json"></parameter>
+        <classes>
+            <class name="VendorsPortal.VendorsPortalTest"></class>
+        </classes>
+    </test>
+</suite>

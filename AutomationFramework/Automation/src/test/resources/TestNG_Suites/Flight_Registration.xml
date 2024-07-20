@@ -1,0 +1,27 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="mktest">
+    <test name="1 parameter">
+        <parameter name="dataPath" value="src/test/resources/test-data/Data/FlightReservation/OnePassenger.json"/>
+        <classes>
+            <class name="FlightReservation.FlightReservationTest"/>
+        </classes>
+    </test>
+    <test name="2 parameter">
+        <parameter name="dataPath" value="src/test/resources/test-data/Data/FlightReservation/TwoPassenger.json"/>
+        <classes>
+            <class name="FlightReservation.FlightReservationTest"/>
+        </classes>
+    </test>
+    <test name="3 parameter">
+        <parameter name="dataPath" value="src/test/resources/test-data/Data/FlightReservation/ThirdPassenger.json"/>
+        <classes>
+            <class name="FlightReservation.FlightReservationTest"/>
+        </classes>
+    </test>
+    <test name="4 parameter">
+        <parameter name="dataPath" value="src/test/resources/test-data/Data/FlightReservation/FourthPassenger.json"/>
+        <classes>
+            <class name="FlightReservation.FlightReservationTest"/>
+        </classes>
+    </test>
+</suite>
