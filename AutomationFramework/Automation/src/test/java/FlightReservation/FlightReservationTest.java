@@ -1,13 +1,17 @@
 package FlightReservation;
 
+import FlightReservation.ConstantsFramework.FrameConstants;
 import FlightReservation.Model.FlightReservationData;
 import PageTests.BaseTest;
+import Utils.ConfigReader;
 import Utils.JavaUtil;
 import org.BookYourFlights.FlighReservation.*;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+
+import java.io.IOException;
 
 public class FlightReservationTest extends BaseTest {
     private FlightReservationData flightReservationData;
@@ -18,9 +22,9 @@ public class FlightReservationTest extends BaseTest {
         flightReservationData= JavaUtil.getData(path, FlightReservationData.class);
     }
     @Test
-    public void UserRegistration(){
+    public void UserRegistration() throws IOException {
         RegistrationTestPage registrationTestPage=new RegistrationTestPage(driver);
-        registrationTestPage.navigateTo("https://d1uh9e7cu07ukd.cloudfront.net/selenium-docker/reservation-app/index.html");
+        registrationTestPage.navigateTo(ConfigReader.getPropertyFor(FrameConstants.FLIGHTRESERVATION_URL));
         Assert.assertTrue(registrationTestPage.isAt());
         registrationTestPage.detailsEntryAndRegister(flightReservationData.getFirstName(),flightReservationData.getLastName(),flightReservationData.getEmail(),flightReservationData.getPassword(),flightReservationData.getStreet(),flightReservationData.getCity(),"Alabama",flightReservationData.getZip());
     }

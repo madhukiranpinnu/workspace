@@ -1,6 +1,8 @@
 package VendorsPortal;
 
+import FlightReservation.ConstantsFramework.FrameConstants;
 import PageTests.BaseTest;
+import Utils.ConfigReader;
 import Utils.JavaUtil;
 import VendorsPortal.Model.VendorPortalTestData;
 import org.BookYourFlights.VendorDemo.DashboardTestPage;
@@ -14,6 +16,8 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
+
 public class VendorsPortalTest extends BaseTest {
     private VendorLoginTestPage vendorLoginTestPage;
     private DashboardTestPage dashboardTestPage;
@@ -26,9 +30,9 @@ public class VendorsPortalTest extends BaseTest {
         this.pathData= JavaUtil.getData(pathData, VendorPortalTestData.class);
     }
     @Test
-    public void LoginTest(){
+    public void LoginTest() throws IOException {
         vendorLoginTestPage=new VendorLoginTestPage(driver);
-        vendorLoginTestPage.goTo("https://d1uh9e7cu07ukd.cloudfront.net/selenium-docker/vendor-app/index.html");
+        vendorLoginTestPage.goTo(ConfigReader.getPropertyFor(FrameConstants.VENDORPORTAL_URL));
         Assert.assertTrue(vendorLoginTestPage.isAt());
         vendorLoginTestPage.Login(pathData.getUsername(), pathData.getPassword());
     }
